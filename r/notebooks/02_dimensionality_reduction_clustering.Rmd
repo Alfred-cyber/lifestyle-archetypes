@@ -1,0 +1,52 @@
+---
+title: "02 — Dimensionality Reduction and Clustering"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(umap)
+library(dbscan)
+library(factoextra)
+```
+
+## Load processed features
+
+```{r load-features}
+# features <- read_csv("../../data/processed/lifestyle_features.csv")
+```
+
+## Standardise features
+
+```{r standardise}
+# X <- scale(features %>% select(<lifestyle_cols>))
+```
+
+## UMAP: explore n_neighbors and min_dist
+
+```{r umap}
+# umap_config <- umap.defaults
+# umap_config$n_neighbors <- 15
+# umap_config$min_dist <- 0.1
+# embedding <- umap(X, config = umap_config)
+```
+
+## Fit and compare K-means, hierarchical clustering, DBSCAN
+
+```{r clustering}
+# kmeans_fit <- kmeans(X, centers = 4, nstart = 25)
+# hier_fit <- hclust(dist(X), method = "ward.D2")
+# hier_clusters <- cutree(hier_fit, k = 4)
+# dbscan_fit <- dbscan(X, eps = 0.5, minPts = 10)
+```
+
+## Justify chosen algorithm and parameters
+
+Document rationale here: why this algorithm, why this k / eps, what alternatives were tried.
+
+## Save cluster assignments
+
+```{r save-assignments}
+# write_csv(assignments, "../../data/processed/cluster_assignments.csv")
+```

@@ -1,0 +1,56 @@
+---
+title: "04 — Archetype Characterisation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(car)
+library(fmsb)
+```
+
+## Load features, cluster assignments and outcome scores
+
+```{r load-data}
+# df <- read_csv("../../data/processed/lifestyle_features.csv")
+# assignments <- read_csv("../../data/processed/cluster_assignments.csv")
+# df <- df %>% left_join(assignments, by = "participant_id")
+```
+
+## Per-cluster summary statistics
+
+```{r summary-stats}
+# df %>% group_by(cluster) %>% summarise(across(<lifestyle_cols>, list(mean = mean, sd = sd), na.rm = TRUE))
+```
+
+## Statistical tests across clusters (ANOVA / chi-square)
+
+```{r stat-tests}
+# for (col in <numeric_cols>) {
+#   model <- aov(df[[col]] ~ factor(df$cluster))
+#   print(summary(model))
+# }
+```
+
+## Relate clusters to PIU and mental health scores (train-set only, preliminary)
+
+NOTE: use train-set labels only; report as a preliminary/exploratory association, not a
+validated clinical finding.
+
+## Robustness check: do associations hold under different clustering parameters?
+
+Optional stretch: re-run notebooks 02/03 with different UMAP/clustering parameters and compare.
+
+## Summary visualisation per archetype (radar chart / heatmap)
+
+```{r radar-chart}
+# One clear chart per archetype summarising its defining lifestyle features
+# radarchart(archetype_summary_wide)
+```
+
+## Save archetype summary table
+
+```{r save-summary}
+# write_csv(archetype_summary, "../../data/processed/archetype_summary.csv")
+```

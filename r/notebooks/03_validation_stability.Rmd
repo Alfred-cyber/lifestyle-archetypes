@@ -1,0 +1,46 @@
+---
+title: "03 — Cluster Validation and Stability"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(cluster)
+library(clValid)
+library(fpc)
+```
+
+## Load features and cluster assignments
+
+```{r load-data}
+# features <- read_csv("../../data/processed/lifestyle_features.csv")
+# assignments <- read_csv("../../data/processed/cluster_assignments.csv")
+```
+
+## Compute validation metrics
+
+```{r validation-metrics}
+# sil <- silhouette(labels, dist(X))
+# db <- index.DB(X, labels)
+# ch <- calinhara(X, labels)
+```
+
+## Stability check: subsampling
+
+```{r stability-subsampling}
+# Re-run clustering on repeated random subsamples (e.g. 80% of data) and compare
+# label agreement (e.g. Adjusted Rand Index via mclust::adjustedRandIndex) across runs
+```
+
+## Stability check: feature noise sensitivity
+
+```{r stability-noise}
+# Add small Gaussian noise to standardised features and re-cluster;
+# compare stability of solution
+```
+
+## Summarise: does the solution hold up?
+
+Write a short conclusion here on whether the clustering solution is stable enough to report
+as a finding.

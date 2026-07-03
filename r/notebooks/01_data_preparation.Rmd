@@ -1,0 +1,43 @@
+---
+title: "01 — Data Preparation"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("../R/data_prep.R")
+library(tidyverse)
+library(corrplot)
+```
+
+## Load and combine train/test data
+
+```{r load-data}
+# df <- load_raw_data("../../data/raw/train.csv", "../../data/raw/test.csv")
+# dim(df)
+```
+
+## Document missingness
+
+```{r missingness}
+# summarise_missingness(df)
+```
+
+## Engineer sleep, activity and body composition features
+
+```{r engineer-features}
+# features <- engineer_features(df)
+# head(features)
+```
+
+## Exploratory plots: distributions and pairwise correlations
+
+```{r exploratory-plots}
+# corrplot(cor(features %>% select(where(is.numeric)), use = "pairwise.complete.obs"))
+```
+
+## Write processed dataset
+
+```{r write-output}
+# write_csv(features, "../../data/processed/lifestyle_features.csv")
+```
